@@ -25,6 +25,25 @@ public class TestDAO {
 
     @Inject
     ContactDAO contactDAO;
+    
+    //Testing the DataSource
+    @Test
+    public void testDataSource(){
+        
+        //given
+        String schema = null;
+        try (Connection connection = ds.getConnection();) {
+            schema = connection.getSchema();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(schema);
+        
+        //when
+
+        //then
+        Assert.assertEquals("PUBLIC", schema);
+    }
 
     @Test
     public void testDAO() {
