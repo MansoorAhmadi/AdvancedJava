@@ -80,7 +80,7 @@ public class JPASpringConfig {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(this.dataSource);
         //source of the contact class
-        factoryBean.setAnnotatedPackages("src/main/java/fr/epita/AtBeanNotation");
+        factoryBean.setPackagesToScan("src/main/java/fr/epita/AtBeanNotation");
         factoryBean.setHibernateProperties(new Properties());
         //for the moment we create an empty property
         return factoryBean;
